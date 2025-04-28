@@ -14,11 +14,11 @@ const ContextUploader: React.FC<ContextUploaderProps> = ({ context, onContextCha
   };
 
   return (
-    <div className="mb-6 p-4 bg-blue-50 rounded border border-blue-100">
+    <div className="mb-8 p-5 bg-gradient-to-br from-blue-50/80 to-white/80 rounded-2xl border border-blue-100 shadow-md">
       <h2 className="font-semibold text-blue-800 mb-2 text-lg">Contexte de la décision</h2>
       <textarea
-        className="w-full min-h-[80px] border rounded p-2 text-gray-700 focus:outline-none focus:ring focus:border-blue-300"
-        placeholder="Décrivez le problème, les options, les arguments, les objectifs..."
+        className="w-full min-h-[80px] border border-blue-200 rounded-xl p-3 text-gray-700 bg-white/70 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-300 text-base placeholder-gray-400 backdrop-blur-md"
+        placeholder="Décris-moi le problème, les options, les arguments, les objectifs..."
         value={value}
         onChange={handleChange}
       />

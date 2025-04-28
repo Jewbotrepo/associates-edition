@@ -53,7 +53,7 @@ You **do not take sides**: your goal is to **maximize the company's success** wh
 ---
 
 ## 🧐 Language & Style:
-- Always in **French** (always use informal tone).
+- Always in **French** (always use informal tone 'tu' instead of 'vous').
 - Clear, logical, friendly, and motivating.
 - Concise but complete.
 - No passive-aggressive comments.
@@ -134,17 +134,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-8">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-blue-900 tracking-tight">Jewbot – Associates Edition</h1>
-        <p className="text-gray-600 text-center mt-2">Assistant interne pour la prise de décision entre associés</p>
+    <div className="min-h-screen flex flex-col items-center justify-center py-8" style={{background: 'none'}}>
+      <header className="mb-10 text-center flex flex-col items-center justify-center">
+        <img src="/logo.svg" alt="Logo Jewbot" style={{height:'64px', width:'auto', marginBottom:'12px'}} />
+        <p className="text-[#1E0E62] text-lg mt-3 font-medium" style={{fontFamily:'Poppins, sans-serif', opacity:0.7}}>Assistant interne pour la prise de décision entre associés</p>
       </header>
       <main className="w-full max-w-2xl flex-1">
         <ContextUploader context={context} onContextChange={handleContextChange} />
-        <div className="bg-white rounded-lg shadow p-6 min-h-[400px] flex flex-col justify-center items-center w-full">
+        <div className="frosted p-6 flex flex-col justify-center items-center w-full shadow-xl transition-all duration-500">
           <Chat messages={messages} onSend={handleNewMessage} context={context} />
           {loading && <LoadingIndicator />}
-          {error && <div className="text-red-600 mt-2">{error}</div>}
+          {error && <div className="text-red-600 mt-2 font-semibold animate-pulse">{error}</div>}
         </div>
         <ResetButton onReset={handleReset} />
       </main>
