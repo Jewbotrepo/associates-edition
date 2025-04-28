@@ -76,3 +76,77 @@ input::placeholder, textarea::placeholder {
   opacity: 1;
   font-family: 'Poppins', sans-serif;
 }
+
+/* Styles pour le contenu Markdown (quasi sans marges verticales) */
+.markdown-content {
+  @apply text-base font-normal leading-normal;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  /* Apply base heading styles, override margins below */
+}
+
+.markdown-content h1 {
+  @apply text-xl font-semibold mt-2 mb-1; /* Minimal top margin */
+}
+
+.markdown-content h2 {
+  @apply text-lg font-semibold mt-1.5 mb-0.5; /* Minimal top margin */
+}
+
+.markdown-content h3 {
+  @apply text-base font-semibold mt-1 mb-0; /* Minimal top margin */
+}
+
+/* Key change: Minimal paragraph margins */
+.markdown-content p {
+  @apply my-0.5;
+}
+
+.markdown-content strong {
+  @apply font-semibold;
+}
+
+.markdown-content ul, .markdown-content ol {
+  @apply my-1 pl-5;
+}
+
+.markdown-content ul {
+  @apply list-disc;
+}
+
+.markdown-content ol {
+  @apply list-none p-0;
+}
+
+.markdown-content li {
+  @apply my-0;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-[#1E75FF] pl-3 my-1 text-sm italic bg-[#f0f5ff]/60 py-1; /* Reduced vertical margin */
+}
+
+.markdown-content code {
+  @apply bg-gray-200/70 text-xs px-1 py-0.5 rounded font-mono;
+}
+
+.markdown-content pre {
+  @apply bg-gray-800 text-white p-3 rounded-lg my-1 overflow-x-auto text-sm; /* Reduced vertical margin */
+}
+
+.markdown-content pre code {
+  @apply bg-transparent text-inherit p-0 text-sm;
+}
+
+/* Remove margin between adjacent block elements if possible */
+.markdown-content > * + * {
+  /* Tailwind doesn't have a direct way for this complex selector,
+     but we've minimized individual margins above. */
+  /* You could potentially add custom CSS here if needed */
+}
