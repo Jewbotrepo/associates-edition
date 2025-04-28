@@ -41,8 +41,8 @@ const ConversationHistory: React.FC<ConversationHistoryProps> = ({ messages }) =
           <div
             className={
               msg.role === 'user'
-                ? 'inline-block bg-[#1E75FF] text-white px-8 py-5 rounded-3xl max-w-[70%] break-words text-right font-medium shadow-[0_2px_24px_0_rgba(31,38,135,0.06)] backdrop-blur-lg'
-                : 'inline-block bg-white/40 text-[#1E0E62] px-8 py-5 rounded-3xl max-w-[70%] break-words text-left font-normal shadow-[0_2px_24px_0_rgba(31,38,135,0.06)] backdrop-blur-lg'
+                ? 'inline-block bg-[#1E75FF] text-white px-8 py-5 rounded-3xl break-words text-right font-medium shadow-[0_2px_24px_0_rgba(31,38,135,0.06)] backdrop-blur-lg w-full'
+                : 'inline-block bg-white/40 text-[#1E0E62] px-8 py-5 rounded-3xl break-words text-left font-normal shadow-[0_2px_24px_0_rgba(31,38,135,0.06)] backdrop-blur-lg w-full'
             }
             style={{ whiteSpace: 'pre-line', transition: 'all 0.3s', border: 'none' }}
           >

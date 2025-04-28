@@ -134,18 +134,18 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-8" style={{background: 'none'}}>
+    <div className="min-h-screen flex flex-col items-center justify-center py-8 px-6" style={{background: 'none'}}>
       <header className="mb-10 text-center flex flex-col items-center justify-center">
-        <img src="/logo.svg" alt="Logo Jewbot" style={{height:'64px', width:'auto', marginBottom:'12px'}} />
+        <img src="/logo.svg" alt="Logo Jewbot" style={{height:'42px', width:'auto', marginBottom:'12px'}} />
         <p className="text-[#1E0E62] text-lg mt-3 font-medium" style={{fontFamily:'Poppins, sans-serif', opacity:0.7}}>Assistant interne pour la prise de décision entre associés</p>
       </header>
-      <main className="w-full max-w-2xl flex-1">
+      <main className="w-full max-w-2xl flex-1 flex flex-col">
         <ContextUploader context={context} onContextChange={handleContextChange} />
-        <div className="frosted p-6 flex flex-col justify-center items-center w-full shadow-xl transition-all duration-500">
+        <div className="flex-1 flex flex-col justify-end w-full">
           <Chat messages={messages} onSend={handleNewMessage} context={context} />
-          {loading && <LoadingIndicator />}
-          {error && <div className="text-red-600 mt-2 font-semibold animate-pulse">{error}</div>}
         </div>
+        {loading && <LoadingIndicator />}
+        {error && <div className="text-red-600 mt-2 font-semibold animate-pulse self-center">{error}</div>}
         <ResetButton onReset={handleReset} />
       </main>
     </div>
