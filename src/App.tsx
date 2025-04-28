@@ -70,7 +70,7 @@ You **do not take sides**: your goal is to **maximize the company's success** wh
 ## 📝 Token Limit:
 - Your answer must fit within 1200 tokens maximum. If needed, summarize or omit less important details to stay within this limit.
 `;
-const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || '';
+const REACT_APP_OPENROUTER_API_KEY="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";
 function App() {
   // Historique de la conversation (localStorage)
   const [messages, setMessages] = useState<Message[]>(() => {
@@ -106,14 +106,14 @@ function App() {
     setLoading(true);
     try {
       // Appel à l'API OpenRouter (si clé présente)
-      if (!OPENROUTER_API_KEY) {
+      if (!REACT_APP_OPENROUTER_API_KEY) {
         throw new Error('Clé API OpenRouter manquante.');
       }
       const assistantReply = await askJewbot({
         userMessage: msg.content,
         context,
         jewbotPrompt: JEWBOT_PROMPT,
-        apiKey: OPENROUTER_API_KEY,
+        apiKey: REACT_APP_OPENROUTER_API_KEY,
       });
       setMessages(prev => {
         const updated = [...prev, { role: 'assistant' as const, content: assistantReply }];
